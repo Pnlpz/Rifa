@@ -1,0 +1,12 @@
+<table class="table">
+  <% @raffles.each do |raffle| %>
+  <tr>
+    <td><%= raffle.product.name %></td>
+    <td>  <%= raffle.product.price %></td>
+  </tr>
+  <% end %>
+  <tr>
+    <td> <h4>Total: </h4></td>
+    <td> <h4> <%= @raffles.map {|raffle| raffle.product.price}.sum %></h4></td>
+  </tr>
+</table>

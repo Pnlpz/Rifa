@@ -9,4 +9,7 @@ class RafflesController < ApplicationController
       redirect_to products_path, alert: 'Tu rifa no ha sido añadida al carro de compras'
     end
   end
+  def index
+    @raffles = current_user.raffles
+  end
 end
