@@ -1,8 +1,14 @@
 <table class="table">
+  <tr>
+    <td> <h1> Producto </h1></td>
+    <td><h1> Precio </h1></td>
+  </tr>
   <% @raffles.each do |raffle| %>
   <tr>
     <td><%= raffle.product.name %></td>
     <td>  <%= raffle.product.price %></td>
+    <!-- <td class="btn btn-danger">Delete</td> -->
+    <td> Eliminar </td>
   </tr>
   <% end %>
   <tr>
