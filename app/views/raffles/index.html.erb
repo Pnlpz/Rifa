@@ -5,14 +5,19 @@
   </tr>
   <% @raffles.each do |raffle| %>
   <tr>
-    <td><%= raffle.product.name %></td>
+    <td>
+      <%= image_tag raffle.product.photo %>
+      <%= raffle.product.name %>
+    </td>
     <td>  <%= raffle.product.price %></td>
     <!-- <td class="btn btn-danger">Delete</td> -->
-    <td> Eliminar </td>
+    <td class="btn btn-danger"> <%= link_to 'Eliminar', raffles_delete_path(raffle), method: :delete %> </td>
   </tr>
   <% end %>
   <tr>
     <td> <h4>Total: </h4></td>
     <td> <h4> <%= @raffles.map {|raffle| raffle.product.price}.sum %></h4></td>
+    <td class="btn btn-success"> <%= link_to 'Pagar'%> </td>
+<!-- Agregar ruta para botón pagar. Incluir Paypal -->
   </tr>
 </table>
