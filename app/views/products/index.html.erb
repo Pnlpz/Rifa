@@ -11,12 +11,8 @@
                 <h5> Precio rifa:  <%= product.price %> </h5>
               </div>
                <%= link_to 'Comprar', product_raffles_path(product), class: 'btn btn-success', method: :post %>
-               <% if can?(:edit, @product) %>
                <%= link_to 'Editar', edit_product_path(product), class: 'btn btn-warning' %>
-               <% end %>
-               <% if can?(:destroy, @product) %>
                <%= link_to 'Eliminar', product, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %>
-               <% end %>
            </div>
         </div>
       <% end %>
