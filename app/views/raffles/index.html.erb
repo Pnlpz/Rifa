@@ -6,12 +6,13 @@
   <% @raffles.each do |raffle| %>
   <tr>
     <td>
-      <%= image_tag raffle.product.photo %>
-      <%= raffle.product.name %>
+     <%= image_tag raffle.product.photo %>
+     <h4><%= raffle.product.name %></h4>
     </td>
-    <td>  <%= raffle.product.price %></td>
-    <!-- <td class="btn btn-danger">Delete</td> -->
-    <td class="btn btn-danger"> <%= link_to 'Eliminar', raffles_delete_path(raffle), method: :delete %> </td>
+    <td> <h4><%= raffle.product.price %></h4> </td>
+    <td class="btn btn-danger">
+      <%= link_to 'Eliminar', raffles_delete_path(raffle), method: :delete %>
+    </td>
   </tr>
   <% end %>
   <tr>
