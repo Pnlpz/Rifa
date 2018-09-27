@@ -6,7 +6,6 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-Product.destroy_all
 
 12.times do |i|
   Product.create(
@@ -14,5 +13,5 @@ Product.destroy_all
     price: Faker::Commerce.price.to_i,
     photo: "https://picsum.photos/200/?random"
     )
-
+    user_id = "#{i + 1}"
 end

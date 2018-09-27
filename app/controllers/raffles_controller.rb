@@ -1,5 +1,6 @@
 class RafflesController < ApplicationController
   before_action :authenticate_user!
+  skip_authorization_check
   def create
     @product = Product.find(params[:product_id])
     @raffle = Raffle.new(product: @product, user: current_user)

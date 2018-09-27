@@ -6,4 +6,6 @@ class User < ApplicationRecord
 
 has_many :raffles
 has_many :products, through: :raffles
+
+enum role: [:admin, :user, :visit]
 end
