@@ -10,6 +10,7 @@ class Ability
     else
     can :create, Product
     can :read, Product
+    can :user, :all
     can :edit, Product, user_id: user.id
     can :destroy, Product, user_id: user.id
   end

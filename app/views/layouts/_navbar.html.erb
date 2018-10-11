@@ -1,5 +1,4 @@
 
-
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
   <div class="container">
     <a class="navbar-brand" href=" <%= root_path %> ">Rífalo</a>
@@ -8,28 +7,31 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarResponsive">
       <ul class="navbar-nav ml-auto">
-        <li class="nav-item active">
-          <a class="nav-link" href="<%= root_path %>">Home <span class="sr-only">(current)</span></a>
-        </li>
-        <li class="nav-item active">
-          <a class="nav-link" href="<%= new_product_path %>">New Product <span class="sr-only">(current)</span></a>
-        </li>
+        <% unless current_user %>
         <li class="nav-item">
           <a class="nav-link" href="<%= user_session_path %>">Sign in</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="<%= new_user_registration_path %> ">Sign up</a>
         </li>
+        <% end %>
+        <% if current_user %>
+        <li class="nav-item active">
+          <a class="nav-link" href="<%= new_product_path %>">New Product <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="<%= user_products_path %>">Mis Productos <span class="sr-only">(current)</span></a>
+        </li>
         <li class="nav-item">
           <a class="nav-link" href="<%= destroy_user_session_path %> " data-method= "DELETE">Cerrar Sesión</a>
         </li>
-        <% if current_user %>
         <li>
           <a href="<%= raffles_path %>" class="btn btn-success">
               Carro de compras <span class="badge badge-light"> <%= current_user.raffles.count %></span>
-          </a>
+            </a>
         </li>
         <% end %>
+
       </ul>
   </div>
 </div>

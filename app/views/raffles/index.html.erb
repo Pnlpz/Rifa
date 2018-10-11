@@ -11,7 +11,7 @@
     </td>
     <td> <h4><%= raffle.product.price %></h4> </td>
     <td class="btn btn-danger">
-      <%= link_to 'Eliminar', raffles_delete_path(raffle), method: :delete %>
+      <%= link_to 'Eliminar', raffle_path(raffle), method: :delete %>
     </td>
   </tr>
   <% end %>
