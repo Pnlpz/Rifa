@@ -1,3 +1,24 @@
-<h1>Mis Productos:</h1>
-
-<%= render 'products/products' %>
+<h1>Mis productos</h1>
+<div class="row">
+  <% @products.each_slice(4) do |row| %>
+    <% row.each do |product| %>
+    <% if product.user_id == current_user.id %>
+      <div class="col-md-3">
+          <div class="card">
+            <%= image_tag product.photo.url, class: 'card-img-top' %>
+            <div class="body">
+              <h3>  <%= product.name %> </h3>
+              <h5> Precio rifa:  <%= product.price %> </h5>
+            </div>
+             <%= link_to 'Comprar', product_raffles_path(product), class: 'btn btn-success', method: :post %>
+             <% if current_user %>
+                 <%= link_to 'Editar', edit_product_path(product), class: 'btn btn-warning' %>
+                 <%= link_to 'Eliminar', product, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %>
+               <% end %>
+         </div>
+      </div>
+      <% end %>
+     <% end %>
+    <div class="w-100"></div>
+  <% end %>
+</div>

@@ -4,7 +4,7 @@
       <% row.each do |product| %>
         <div class="col-md-3">
             <div class="card">
-              <%= image_tag product.photo, class: 'card-img-top' %>
+              <%= image_tag product.photo.url, class: 'card-img-top' %>
               <div class="body">
                 <h3>  <%= product.name %> </h3>
                 <h5> Precio rifa:  <%= product.price %> </h5>
