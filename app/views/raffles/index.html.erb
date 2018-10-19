@@ -6,7 +6,7 @@
   <% @raffles.each do |raffle| %>
   <tr>
     <td>
-     <%= image_tag (raffle.product.photo.url).thumb %>
+     <%= image_tag raffle.product.photo.thumb.url %>
      <h4><%= raffle.product.name %></h4>
     </td>
     <td> <h4><%= raffle.product.price %></h4> </td>
