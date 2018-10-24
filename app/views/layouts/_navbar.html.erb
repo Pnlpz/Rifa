@@ -12,8 +12,12 @@
           <a class="nav-link" href="<%= user_session_path %>">Sign in</a>
         </li>
         <li class="nav-item">
+          <a class="nav-link" href="<%= user_facebook_omniauth_authorize_path %>">Sign in with Facebook</a>
+        </li>
+        <li class="nav-item">
           <a class="nav-link" href="<%= new_user_registration_path %> ">Sign up</a>
         </li>
+
         <% end %>
         <% if current_user %>
         <li class="nav-item active">
