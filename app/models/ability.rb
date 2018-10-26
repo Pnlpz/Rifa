@@ -8,12 +8,12 @@ class Ability
     if user.admin?
       can :manage, :all
     else
-    can :create, Product
-    can :read, Product
-    can :user, :all
-    can :edit, Product, user_id: user.id
-    can :destroy, Product, user_id: user.id
-  end
+      can :create, Product
+      can :read, Product
+      can :user, :all
+      can :update, Product, user_id: user.id
+      can :destroy, Product, user_id: user.id
+    end
     #   if user.admin?
     #     can :manage, :all
     #   else
