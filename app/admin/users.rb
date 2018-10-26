@@ -36,4 +36,7 @@ def update
  super
  end
 end
+
+filter :email, as: :select
+filter :created_at
 end
