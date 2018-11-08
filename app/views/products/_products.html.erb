@@ -11,7 +11,7 @@
               </div>
                <%= link_to 'Buy', product_raffles_path(product), class: 'btn btn-success', method: :post %>
                <% if current_user %>
-                 <% if can?(user, :delete, product) %>
+                 <% if can?(@user, :delete, product) %>
                    <%= link_to 'Edit', edit_product_path(product), class: 'btn btn-warning' %>
                    <%= link_to 'Delete', product, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %>
                  <% end %>
