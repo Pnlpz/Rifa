@@ -6,7 +6,7 @@ class ApplicationController < ActionController::Base
   #  end
   # end
   check_authorization :unless => :is_devise_or_active_admin?
-
+  skip_authorization_check
   protected
 
   def is_devise_or_active_admin?
@@ -15,5 +15,10 @@ class ApplicationController < ActionController::Base
 
   def active_admin_resource?
     self.class.ancestors.include? ActiveAdmin::BaseController
+  end
+
+  private
+  def do_not_check_authorization?
+    respond_to?(:devise_controller?)
   end
 end
