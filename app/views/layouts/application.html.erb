@@ -5,12 +5,16 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="icon" href="https://img.icons8.com/color/50/000000/volunteering.png">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-  <%= render 'layouts/navbar' %>
-  <body>
+  <header>
+      <%= render 'layouts/navbar' %>
+  </header>
 
+  <body>
+    
 
     <div class="container" style="margin-top: 90px;">
       <% if notice.present? %>

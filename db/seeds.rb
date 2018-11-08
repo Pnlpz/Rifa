@@ -7,12 +7,12 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 
-12.times do |i|
-  Product.create(
-    name: Faker::Commerce.product_name,
-    price: Faker::Commerce.price.to_i,
-    photo: "https://picsum.photos/200/?random"
-    )
-    user_id = "#{i + 1}"
-end
+# 12.times do |i|
+#   Product.create(
+#     name: Faker::Commerce.product_name,
+#     price: Faker::Commerce.price.to_i,
+#     photo: "https://picsum.photos/200/?random"
+#     )
+#     user_id = "#{i + 1}"
+# end
 AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password') if Rails.env.development?
